@@ -1,6 +1,6 @@
 Um simples projeto JS  para visualizar um byteStream que foi salvo.
 A forma rotacionada posiciona cada byte em uma linha e o proximo byte dessa linha será um multiplo sucessor correspondente definido por "bytes por linha". Exemplo:
- A byteStream em Hex FF FE FD FC FB FA F9 F8 F7 F6 F5 F4 F3 F2 F1 F0 EF EE ED EC EB EA  pode ser arranjada na matriz:
+ A byteStream em Hex FF FE FD FC FB FA F9 F8 F7 F6 F5 F4 F3 F2 F1 F0 EF EE ED EC EB EA  pode ser arranjada na matriz com o "bytes por linha = 4":
  FF FE FD FC
  FB FA F9 F8
  F7 F6 F5 F4
