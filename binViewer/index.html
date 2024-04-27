@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Arquivo Binário com Filtros</title>
+    <style>
+        body {
+            background-color: black; /* Defina a cor de fundo desejada aqui */
+            color: white; /* Defina a cor do texto */
+        }
+        .highlight-equal { color: lightyellow; }
+        .highlight-less { color: lightblue; }
+        .highlight-greater { color: red; }
+        .highlight-none { color: white; }
+        .byteContainer {
+            background-color: black;
+            font-family: monospace;
+            white-space: pre;
+            margin-top: 10px;
+            width: 100vw; 
+            box-sizing: border-box;
+        }
+        .histogramContainer {
+            margin-top: 10px;
+        }
+        .histogramCanvas {
+            width: 100%;
+            height: 50px; /* Defina a altura desejada para cada histograma */
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="controlBar">
+        <div id="controls">
+            <input type="file" id="fileInput">
+            Bytes por linha: <input type="number" id="lineLengthInput" value="32" min="1">
+            filtrar: <input type="number" id="filterInput" min="0" max="255">
+            <label><input type="checkbox" id="filterEqual">=</label>
+            <label><input type="checkbox" id="filterLess">></label>
+            <label><input type="checkbox" id="filterGreater"><</label>
+        </div>
+        <div id="hideControls">
+            <label><input type="checkbox" id="toggleHexContainer" checked>Matriz Hex</label>
+            <label><input type="checkbox" id="toggleDecContainer">Matriz Dec</label>
+            <label><input type="checkbox" id="toggleHexContainerRotated">Matriz Hex rotacionado</label>
+            <label><input type="checkbox" id="toggleDecContainerRotated">Matriz Dec rotacionado</label>
+            <label><input type="checkbox" id="toggleHistogramsContainer">Gráfico</label>
+            <label><input type="checkbox" id="toggleHistogramsContainerRotated" checked>Grafico Rotacionado</label>
+        </div>
+    </div>
+    <div id="hexContainer" class="byteContainer"></div>
+    <div id="decContainer" class="byteContainer"></div>
+    <div id="hexContainerRotated" class="byteContainer"></div>
+    <div id="decContainerRotated" class="byteContainer"></div>
+    <div id="histogramsContainer" class="byteContainer"></div>
+    <div id="histogramsContainerRotated" class="byteContainer"></div>
+    <script src="readFile.js"></script>
+</body>
+</html>
